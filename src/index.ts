@@ -1,6 +1,11 @@
 import addresses from "../addresses.json";
 import leveragedTokenAbi from "../abis/leveraged-token-abi.json";
 import factoryAbi from "../abis/factory-abi.json";
+import globalStorageAbi from "../abis/global-storage-abi.json";
+import globalStorageHelperAbi from "../abis/global-storage-helper-abi.json";
+import hyperliquidHandlerAbi from "../abis/hyperliquid-handler-abi.json";
+import leveragedTokenHelperAbi from "../abis/leveraged-token-helper-abi.json";
+import referralsAbi from "../abis/referrals-abi.json";
 
 // Address type for Ethereum addresses
 export type Address = `0x${string}`;
@@ -28,8 +33,13 @@ export const LEVERAGED_TOKEN_IMPLEMENTATION_ADDRESS =
 export const REFERRALS_ADDRESS = ALL_ADDRESSES.Referrals;
 
 // Export ABIs
-export const LEVERAGED_TOKEN_ABI = leveragedTokenAbi;
 export const FACTORY_ABI = factoryAbi;
+export const GLOBAL_STORAGE_ABI = globalStorageAbi;
+export const GLOBAL_STORAGE_HELPER_ABI = globalStorageHelperAbi;
+export const HYPERLIQUID_HANDLER_ABI = hyperliquidHandlerAbi;
+export const LEVERAGED_TOKEN_ABI = leveragedTokenAbi;
+export const LEVERAGED_TOKEN_HELPER_ABI = leveragedTokenHelperAbi;
+export const REFERRALS_ABI = referralsAbi;
 
 // Export addresses as default for convenience
 export default ALL_ADDRESSES;
