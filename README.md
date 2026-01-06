@@ -34,7 +34,15 @@ const leveragedTokenAddress = LEVERAGED_TOKEN_IMPLEMENTATION_ADDRESS;
 ### Import Contract ABIs
 
 ```typescript
-import { FACTORY_ABI, LEVERAGED_TOKEN_ABI } from "@bouncetech/contracts";
+import {
+  FACTORY_ABI,
+  LEVERAGED_TOKEN_ABI,
+  GLOBAL_STORAGE_ABI,
+  GLOBAL_STORAGE_HELPER_ABI,
+  HYPERLIQUID_HANDLER_ABI,
+  LEVERAGED_TOKEN_HELPER_ABI,
+  REFERRALS_ABI,
+} from "@bouncetech/contracts";
 
 // Use with ethers.js
 import { Contract } from "ethers";
@@ -55,18 +63,29 @@ const result = await client.readContract({
 
 ### Available Contracts
 
-- **Factory**: `0xeD8bCDe433EB7c4B69DB1235483bf0Edb726Fc1B`
-- **GlobalStorage**: `0xa07d06383c1863c8A54d427aC890643d76cc03ff`
-- **GlobalStorageHelper**: `0x99836aCBD207d5BCa57E3Fe0448bD1AB0A4BDf5C`
-- **HyperliquidHandler**: `0xE57F983f3F317b2feF5585E660ed24980Ba7C3dA`
-- **LeveragedTokenHelper**: `0x74dd1ecdA4fA350Ee67Ab4103C8728d8C2983802`
-- **LeveragedTokenImplementation**: `0x20132f1804Df40Acc9b5115F47191016a5258721`
-- **Referrals**: `0xfD3A6323878Fc991447CcDd4c644ab419afC6f76`
+The following contracts are available through this package:
+
+- **Factory**
+- **GlobalStorage**
+- **GlobalStorageHelper**
+- **HyperliquidHandler**
+- **LeveragedTokenHelper**
+- **LeveragedTokenImplementation**
+- **Referrals**
+
+For the latest contract addresses, see `addresses.json` in the package or import them programmatically using the exported address constants.
 
 ### Available ABIs
 
+The following ABIs are available:
+
 - `FACTORY_ABI` - Factory contract ABI
+- `GLOBAL_STORAGE_ABI` - GlobalStorage contract ABI
+- `GLOBAL_STORAGE_HELPER_ABI` - GlobalStorageHelper contract ABI
+- `HYPERLIQUID_HANDLER_ABI` - HyperliquidHandler contract ABI
 - `LEVERAGED_TOKEN_ABI` - Leveraged Token contract ABI
+- `LEVERAGED_TOKEN_HELPER_ABI` - LeveragedTokenHelper contract ABI
+- `REFERRALS_ABI` - Referrals contract ABI
 
 ## Updating
 
