@@ -168,6 +168,11 @@ export const leveragedTokenHelperAbi = [
             type: "bool",
             internalType: "bool",
           },
+          {
+            name: "isStandbyMode",
+            type: "bool",
+            internalType: "bool",
+          },
         ],
       },
     ],
@@ -276,6 +281,11 @@ export const leveragedTokenHelperAbi = [
             type: "bool",
             internalType: "bool",
           },
+          {
+            name: "isStandbyMode",
+            type: "bool",
+            internalType: "bool",
+          },
         ],
       },
     ],
@@ -379,6 +389,11 @@ export const leveragedTokenHelperAbi = [
             internalType: "uint256",
           },
           {
+            name: "l1BlockNumber",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
             name: "tokens",
             type: "tuple[]",
             internalType:
@@ -439,6 +454,11 @@ export const leveragedTokenHelperAbi = [
   {
     type: "error",
     name: "DivisionByZero",
+    inputs: [],
+  },
+  {
+    type: "error",
+    name: "PrecompileLib__L1BlockNumberPrecompileFailed",
     inputs: [],
   },
 ] as const;
