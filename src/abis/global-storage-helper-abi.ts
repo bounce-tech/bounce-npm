@@ -12,111 +12,62 @@ export const globalStorageHelperAbi = [
   },
   {
     type: "function",
-    name: "getGlobalStorageData",
-    inputs: [],
+    name: "getLeveragedTokenPositionData",
+    inputs: [
+      {
+        name: "leveragedTokenAddress_",
+        type: "address",
+        internalType: "address",
+      },
+    ],
     outputs: [
       {
         name: "",
         type: "tuple",
-        internalType: "struct IGlobalStorageHelper.GlobalStorageData",
+        internalType: "struct ILeveragedTokenHelper.LeveragedTokenPositionData",
         components: [
           {
-            name: "owner",
+            name: "leveragedToken",
             type: "address",
             internalType: "address",
           },
           {
-            name: "ltImplementation",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "baseAsset",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "treasury",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "factory",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "hyperliquidHandler",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "feeHandler",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "bounce",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "allMintsPaused",
-            type: "bool",
-            internalType: "bool",
-          },
-          {
-            name: "vesting",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "airdrop",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "referrals",
-            type: "address",
-            internalType: "address",
-          },
-          {
-            name: "minTransactionSize",
+            name: "baseAssetContractBalance",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "minLockAmount",
+            name: "baseAssetUserCredit",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "redemptionFee",
+            name: "usdcSpotBalance",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "streamingFee",
+            name: "usdcPerpBalance",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "executeRedemptionFee",
+            name: "usdcMargin",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "treasuryFeeShare",
+            name: "notionalValue",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "referrerRebate",
+            name: "effectiveLeverage",
             type: "uint256",
             internalType: "uint256",
           },
           {
-            name: "refereeRebate",
+            name: "targetLeverage",
             type: "uint256",
             internalType: "uint256",
           },
@@ -124,5 +75,390 @@ export const globalStorageHelperAbi = [
       },
     ],
     stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getLeveragedTokens",
+    inputs: [],
+    outputs: [
+      {
+        name: "",
+        type: "tuple[]",
+        internalType: "struct ILeveragedTokenHelper.LeveragedTokenData[]",
+        components: [
+          {
+            name: "leveragedToken",
+            type: "address",
+            internalType: "address",
+          },
+          {
+            name: "marketId",
+            type: "uint32",
+            internalType: "uint32",
+          },
+          {
+            name: "targetAsset",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "targetLeverage",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "isLong",
+            type: "bool",
+            internalType: "bool",
+          },
+          {
+            name: "exchangeRate",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "baseAssetBalance",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "totalAssets",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "userCredit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "credit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "agentData",
+            type: "tuple[3]",
+            internalType: "struct ILeveragedTokenHelper.AgentData[3]",
+            components: [
+              {
+                name: "slot",
+                type: "uint8",
+                internalType: "uint8",
+              },
+              {
+                name: "agent",
+                type: "address",
+                internalType: "address",
+              },
+              {
+                name: "createdAt",
+                type: "uint256",
+                internalType: "uint256",
+              },
+            ],
+          },
+          {
+            name: "balanceOf",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "mintPaused",
+            type: "bool",
+            internalType: "bool",
+          },
+          {
+            name: "isStandbyMode",
+            type: "bool",
+            internalType: "bool",
+          },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getLeveragedTokens",
+    inputs: [
+      {
+        name: "user_",
+        type: "address",
+        internalType: "address",
+      },
+      {
+        name: "onlyHeld_",
+        type: "bool",
+        internalType: "bool",
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "tuple[]",
+        internalType: "struct ILeveragedTokenHelper.LeveragedTokenData[]",
+        components: [
+          {
+            name: "leveragedToken",
+            type: "address",
+            internalType: "address",
+          },
+          {
+            name: "marketId",
+            type: "uint32",
+            internalType: "uint32",
+          },
+          {
+            name: "targetAsset",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "targetLeverage",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "isLong",
+            type: "bool",
+            internalType: "bool",
+          },
+          {
+            name: "exchangeRate",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "baseAssetBalance",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "totalAssets",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "userCredit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "credit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "agentData",
+            type: "tuple[3]",
+            internalType: "struct ILeveragedTokenHelper.AgentData[3]",
+            components: [
+              {
+                name: "slot",
+                type: "uint8",
+                internalType: "uint8",
+              },
+              {
+                name: "agent",
+                type: "address",
+                internalType: "address",
+              },
+              {
+                name: "createdAt",
+                type: "uint256",
+                internalType: "uint256",
+              },
+            ],
+          },
+          {
+            name: "balanceOf",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "mintPaused",
+            type: "bool",
+            internalType: "bool",
+          },
+          {
+            name: "isStandbyMode",
+            type: "bool",
+            internalType: "bool",
+          },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getLeveragedTokensCoreData",
+    inputs: [],
+    outputs: [
+      {
+        name: "",
+        type: "tuple[]",
+        internalType: "struct ILeveragedTokenHelper.LeveragedTokenCoreData[]",
+        components: [
+          {
+            name: "leveragedToken",
+            type: "address",
+            internalType: "address",
+          },
+          {
+            name: "marketId",
+            type: "uint32",
+            internalType: "uint32",
+          },
+          {
+            name: "targetAsset",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "targetLeverage",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "isLong",
+            type: "bool",
+            internalType: "bool",
+          },
+          {
+            name: "baseAssetBalance",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "credit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "agentData",
+            type: "tuple[3]",
+            internalType: "struct ILeveragedTokenHelper.AgentData[3]",
+            components: [
+              {
+                name: "slot",
+                type: "uint8",
+                internalType: "uint8",
+              },
+              {
+                name: "agent",
+                type: "address",
+                internalType: "address",
+              },
+              {
+                name: "createdAt",
+                type: "uint256",
+                internalType: "uint256",
+              },
+            ],
+          },
+          {
+            name: "mintPaused",
+            type: "bool",
+            internalType: "bool",
+          },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getLeveragedTokensSnapshot",
+    inputs: [],
+    outputs: [
+      {
+        name: "",
+        type: "tuple",
+        internalType: "struct ILeveragedTokenHelper.LeveragedTokensSnapshot",
+        components: [
+          {
+            name: "blockNumber",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "blockTimestamp",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "l1BlockNumber",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "tokens",
+            type: "tuple[]",
+            internalType:
+              "struct ILeveragedTokenHelper.LeveragedTokenSnapshotData[]",
+            components: [
+              {
+                name: "leveragedToken",
+                type: "address",
+                internalType: "address",
+              },
+              {
+                name: "exchangeRate",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "baseAssetContractBalance",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "baseAssetUserCredit",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "usdcSpotBalance",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "usdcPerpBalance",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "usdcMargin",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "totalAssets",
+                type: "uint256",
+                internalType: "uint256",
+              },
+              {
+                name: "notionalValue",
+                type: "uint256",
+                internalType: "uint256",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "error",
+    name: "DivisionByZero",
+    inputs: [],
+  },
+  {
+    type: "error",
+    name: "PrecompileLib__L1BlockNumberPrecompileFailed",
+    inputs: [],
   },
 ] as const;
