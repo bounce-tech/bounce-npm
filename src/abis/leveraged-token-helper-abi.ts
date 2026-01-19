@@ -12,6 +12,25 @@ export const leveragedTokenHelperAbi = [
   },
   {
     type: "function",
+    name: "getLeveragedTokenAssetValue",
+    inputs: [
+      {
+        name: "leveragedTokenAddress_",
+        type: "address",
+        internalType: "address",
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "int256",
+        internalType: "int256",
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
     name: "getLeveragedTokenPositionData",
     inputs: [
       {
@@ -37,7 +56,7 @@ export const leveragedTokenHelperAbi = [
             internalType: "uint256",
           },
           {
-            name: "baseAssetUserCredit",
+            name: "leveragedTokenCredit",
             type: "uint256",
             internalType: "uint256",
           },
@@ -415,7 +434,7 @@ export const leveragedTokenHelperAbi = [
                 internalType: "uint256",
               },
               {
-                name: "baseAssetUserCredit",
+                name: "leveragedTokenCredit",
                 type: "uint256",
                 internalType: "uint256",
               },
