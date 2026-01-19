@@ -1,131 +1,131 @@
 export const hyperliquidHandlerAbi = [
   {
-    type: "function",
-    name: "coreUserExists",
-    inputs: [
+    "type": "function",
+    "name": "coreUserExists",
+    "inputs": [
       {
-        name: "user_",
-        type: "address",
-        internalType: "address",
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
       },
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "bool",
-        internalType: "bool",
+        "name": "",
+        "type": "bool",
+        "internalType": "bool",
       },
     ],
-    stateMutability: "view",
+    "stateMutability": "view",
   },
   {
-    type: "function",
-    name: "hyperliquidUsdc",
-    inputs: [
+    "type": "function",
+    "name": "hyperliquidUsdc",
+    "inputs": [
       {
-        name: "user_",
-        type: "address",
-        internalType: "address",
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
       },
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
       },
     ],
-    stateMutability: "view",
+    "stateMutability": "view",
   },
   {
-    type: "function",
-    name: "marginUsedUsdc",
-    inputs: [
+    "type": "function",
+    "name": "marginUsedUsdc",
+    "inputs": [
       {
-        name: "user_",
-        type: "address",
-        internalType: "address",
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
       },
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
       },
     ],
-    stateMutability: "view",
+    "stateMutability": "view",
   },
   {
-    type: "function",
-    name: "notionalUsdc",
-    inputs: [
+    "type": "function",
+    "name": "notionalUsdc",
+    "inputs": [
       {
-        name: "user_",
-        type: "address",
-        internalType: "address",
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
       },
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
       },
     ],
-    stateMutability: "view",
+    "stateMutability": "view",
   },
   {
-    type: "function",
-    name: "perpUsdc",
-    inputs: [
+    "type": "function",
+    "name": "perpUsdc",
+    "inputs": [
       {
-        name: "user_",
-        type: "address",
-        internalType: "address",
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
       },
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
       },
     ],
-    stateMutability: "view",
+    "stateMutability": "view",
   },
   {
-    type: "function",
-    name: "spotUsdc",
-    inputs: [
+    "type": "function",
+    "name": "spotUsdc",
+    "inputs": [
       {
-        name: "user_",
-        type: "address",
-        internalType: "address",
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
       },
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
       },
     ],
-    stateMutability: "view",
+    "stateMutability": "view",
   },
   {
-    type: "error",
-    name: "PrecompileLib__AccountMarginSummaryPrecompileFailed",
-    inputs: [],
+    "type": "error",
+    "name": "PrecompileLib__AccountMarginSummaryPrecompileFailed",
+    "inputs": [],
   },
   {
-    type: "error",
-    name: "PrecompileLib__CoreUserExistsPrecompileFailed",
-    inputs: [],
+    "type": "error",
+    "name": "PrecompileLib__CoreUserExistsPrecompileFailed",
+    "inputs": [],
   },
   {
-    type: "error",
-    name: "PrecompileLib__SpotBalancePrecompileFailed",
-    inputs: [],
+    "type": "error",
+    "name": "PrecompileLib__SpotBalancePrecompileFailed",
+    "inputs": [],
   },
 ] as const;
