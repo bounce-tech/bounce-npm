@@ -65,11 +65,6 @@ export const hyperliquidHandlerAbi = [
         type: "address",
         internalType: "address",
       },
-      {
-        name: "marketId_",
-        type: "uint32",
-        internalType: "uint32",
-      },
     ],
     outputs: [
       {
@@ -126,21 +121,6 @@ export const hyperliquidHandlerAbi = [
   {
     type: "error",
     name: "PrecompileLib__CoreUserExistsPrecompileFailed",
-    inputs: [],
-  },
-  {
-    type: "error",
-    name: "PrecompileLib__MarkPxPrecompileFailed",
-    inputs: [],
-  },
-  {
-    type: "error",
-    name: "PrecompileLib__PerpAssetInfoPrecompileFailed",
-    inputs: [],
-  },
-  {
-    type: "error",
-    name: "PrecompileLib__PositionPrecompileFailed",
     inputs: [],
   },
   {
