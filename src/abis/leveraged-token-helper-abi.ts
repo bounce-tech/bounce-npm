@@ -12,7 +12,7 @@ export const leveragedTokenHelperAbi = [
   },
   {
     "type": "function",
-    "name": "getLeveragedTokenAssetValue",
+    "name": "getLeveragedTokenBufferAssetValue",
     "inputs": [
       {
         "name": "leveragedTokenAddress_",
