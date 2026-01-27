@@ -98,6 +98,67 @@ export const leveragedTokenHelperAbi = [
   },
   {
     "type": "function",
+    "name": "getLeveragedTokenPositionData",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType":
+          "struct ILeveragedTokenHelper.LeveragedTokenPositionData[]",
+        "components": [
+          {
+            "name": "leveragedToken",
+            "type": "address",
+            "internalType": "address",
+          },
+          {
+            "name": "baseAssetContractBalance",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "leveragedTokenCredit",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "usdcSpotBalance",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "usdcPerpBalance",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "usdcMargin",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "notionalValue",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "effectiveLeverage",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "targetLeverage",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+        ],
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
+    "type": "function",
     "name": "getLeveragedTokens",
     "inputs": [],
     "outputs": [
