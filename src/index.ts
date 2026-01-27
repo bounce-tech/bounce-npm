@@ -6,6 +6,7 @@ import { hyperliquidHandlerAbi } from "./abis/hyperliquid-handler-abi";
 import { leveragedTokenHelperAbi } from "./abis/leveraged-token-helper-abi";
 import { referralsAbi } from "./abis/referrals-abi";
 import { erc20Abi } from "./abis/erc20-abi";
+import { hypeBalanceHelperAbi } from "./abis/hype-balance-helper-abi";
 
 export type Address = `0x${string}`;
 
@@ -23,7 +24,7 @@ export const LEVERAGED_TOKEN_IMPLEMENTATION_ADDRESS =
   "0x126e039f97Dd34fa64E685Ba4b37ca97b1a03DcB";
 export const REFERRALS_ADDRESS = "0xfD3A6323878Fc991447CcDd4c644ab419afC6f76";
 export const USDC_ADDRESS = "0xb88339CB7199b77E23DB6E890353E22632Ba630f";
-export const HYPE_BALANCE_HELPER = "0x7B8CFf7E3b8Be150e735f2AF56DBB69ec44d91b3";
+export const HYPE_BALANCE_HELPER_ADDRESS = "0x7B8CFf7E3b8Be150e735f2AF56DBB69ec44d91b3";
 
 // ABIs
 export const FACTORY_ABI = factoryAbi;
@@ -34,3 +35,4 @@ export const LEVERAGED_TOKEN_ABI = leveragedTokenAbi;
 export const LEVERAGED_TOKEN_HELPER_ABI = leveragedTokenHelperAbi;
 export const REFERRALS_ABI = referralsAbi;
 export const USDC_ABI = erc20Abi;
+export const HYPE_BALANCE_HELPER_ABI = hypeBalanceHelperAbi;
