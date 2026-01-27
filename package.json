@@ -1,6 +1,6 @@
 {
   "name": "@bouncetech/contracts",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Smart contract addresses and ABIs for Bounce Tech - DeFi Leveraged Token Protocol on HyperEVM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
