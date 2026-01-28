@@ -1,6 +1,6 @@
 # @bouncetech/contracts
 
-Smart contract addresses and ABIs for [Bounce Tech](https://bouncetech.io) - DeFi Leveraged Token Protocol built on HyperEVM.
+Smart contract addresses and ABIs for [Bounce Tech](https://bounce.tech/) - DeFi Leveraged Token Protocol built on HyperEVM.
 
 ## Installation
 
