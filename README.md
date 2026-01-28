@@ -18,7 +18,6 @@ pnpm add @bouncetech/contracts
 
 ```typescript
 import {
-  ALL_ADDRESSES,
   FACTORY_ADDRESS,
   GLOBAL_STORAGE_ADDRESS,
   GLOBAL_STORAGE_HELPER_ADDRESS,
@@ -27,16 +26,15 @@ import {
   LEVERAGED_TOKEN_IMPLEMENTATION_ADDRESS,
   REFERRALS_ADDRESS,
   USDC_ADDRESS,
+  HYPE_BALANCE_HELPER_ADDRESS,
 } from "@bouncetech/contracts";
 
-// Use all addresses
-console.log(ALL_ADDRESSES.Factory);
-
-// Or import specific addresses
+// Use specific addresses
 const factoryAddress = FACTORY_ADDRESS;
 const globalStorageAddress = GLOBAL_STORAGE_ADDRESS;
 const leveragedTokenAddress = LEVERAGED_TOKEN_IMPLEMENTATION_ADDRESS;
 const usdcAddress = USDC_ADDRESS;
+const hypeBalanceHelperAddress = HYPE_BALANCE_HELPER_ADDRESS;
 ```
 
 ### Import Contract ABIs
@@ -51,6 +49,7 @@ import {
   LEVERAGED_TOKEN_HELPER_ABI,
   REFERRALS_ABI,
   USDC_ABI,
+  HYPE_BALANCE_HELPER_ABI,
 } from "@bouncetech/contracts";
 
 // Use with ethers.js
@@ -62,11 +61,11 @@ import { createPublicClient, http } from "viem";
 const client = createPublicClient({
   transport: http(),
 });
-const result = await client.readContract({
+const ltExists = await client.readContract({
   address: FACTORY_ADDRESS,
   abi: FACTORY_ABI,
-  functionName: "createLeveragedToken",
-  args: [assetAddress, leverage],
+  functionName: "ltExists",
+  args: [ltAddress],
 });
 ```
 
@@ -82,6 +81,7 @@ The following contracts are available through this package:
 - **LeveragedTokenImplementation**
 - **Referrals**
 - **USDC**
+- **HypeBalanceHelper**
 
 For the latest contract addresses, import them programmatically using the exported address constants.
 
@@ -97,6 +97,7 @@ The following ABIs are available:
 - `LEVERAGED_TOKEN_HELPER_ABI` - LeveragedTokenHelper contract ABI
 - `REFERRALS_ABI` - Referrals contract ABI
 - `USDC_ABI` - USDC (ERC20) contract ABI
+- `HYPE_BALANCE_HELPER_ABI` - HypeBalanceHelper contract ABI
 
 ## Updating
 
