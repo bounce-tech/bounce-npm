@@ -12,6 +12,31 @@ export const leveragedTokenHelperAbi = [
   },
   {
     "type": "function",
+    "name": "getExchangeRates",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct ILeveragedTokenHelper.ExchangeRates[]",
+        "components": [
+          {
+            "name": "leveragedTokenAddress",
+            "type": "address",
+            "internalType": "address",
+          },
+          {
+            "name": "exchangeRate",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+        ],
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
+    "type": "function",
     "name": "getLeveragedTokenBufferAssetValue",
     "inputs": [
       {
