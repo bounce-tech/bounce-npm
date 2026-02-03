@@ -533,6 +533,31 @@ export const leveragedTokenHelperAbi = [
     "stateMutability": "view",
   },
   {
+    "type": "function",
+    "name": "getTotalAssets",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct ILeveragedTokenHelper.TotalAssets[]",
+        "components": [
+          {
+            "name": "leveragedTokenAddress",
+            "type": "address",
+            "internalType": "address",
+          },
+          {
+            "name": "totalAssets",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+        ],
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
     "type": "error",
     "name": "DivisionByZero",
     "inputs": [],
