@@ -6,6 +6,19 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
+    "name": "addAgent",
+    "inputs": [
+      {
+        "name": "agent_",
+        "type": "address",
+        "internalType": "address",
+      },
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable",
+  },
+  {
+    "type": "function",
     "name": "agentCreatedAt",
     "inputs": [
       {
@@ -137,7 +150,7 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
-    "name": "bridgeFromPerp",
+    "name": "bridgeToCore",
     "inputs": [
       {
         "name": "amount_",
@@ -150,33 +163,7 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
-    "name": "bridgeFromSpot",
-    "inputs": [
-      {
-        "name": "amount_",
-        "type": "uint256",
-        "internalType": "uint256",
-      },
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable",
-  },
-  {
-    "type": "function",
-    "name": "bridgeToPerp",
-    "inputs": [
-      {
-        "name": "amount_",
-        "type": "uint256",
-        "internalType": "uint256",
-      },
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable",
-  },
-  {
-    "type": "function",
-    "name": "bridgeToSpot",
+    "name": "bridgeToEvm",
     "inputs": [
       {
         "name": "amount_",
@@ -299,6 +286,19 @@ export const leveragedTokenAbi = [
         "name": "",
         "type": "uint8",
         "internalType": "uint8",
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
+    "type": "function",
+    "name": "hyperliquidNotional",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
       },
     ],
     "stateMutability": "view",
@@ -493,6 +493,19 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
+    "name": "perpDexIndex",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32",
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
+    "type": "function",
     "name": "prepareRedeem",
     "inputs": [
       {
@@ -535,13 +548,8 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
-    "name": "setAgent",
+    "name": "removeAgent",
     "inputs": [
-      {
-        "name": "slot_",
-        "type": "uint8",
-        "internalType": "uint8",
-      },
       {
         "name": "agent_",
         "type": "address",
@@ -684,24 +692,6 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
-    "name": "usdClassTransfer",
-    "inputs": [
-      {
-        "name": "amount_",
-        "type": "uint64",
-        "internalType": "uint64",
-      },
-      {
-        "name": "toPerp_",
-        "type": "bool",
-        "internalType": "bool",
-      },
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable",
-  },
-  {
-    "type": "function",
     "name": "userCredit",
     "inputs": [
       {
@@ -734,6 +724,25 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "event",
+    "name": "AddAgent",
+    "inputs": [
+      {
+        "name": "slot",
+        "type": "uint8",
+        "indexed": true,
+        "internalType": "uint8",
+      },
+      {
+        "name": "agent",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address",
+      },
+    ],
+    "anonymous": false,
+  },
+  {
+    "type": "event",
     "name": "Approval",
     "inputs": [
       {
@@ -759,7 +768,7 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "event",
-    "name": "BridgeFromPerp",
+    "name": "BridgeToCore",
     "inputs": [
       {
         "name": "sender",
@@ -778,45 +787,7 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "event",
-    "name": "BridgeFromSpot",
-    "inputs": [
-      {
-        "name": "sender",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address",
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256",
-      },
-    ],
-    "anonymous": false,
-  },
-  {
-    "type": "event",
-    "name": "BridgeToPerp",
-    "inputs": [
-      {
-        "name": "sender",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address",
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256",
-      },
-    ],
-    "anonymous": false,
-  },
-  {
-    "type": "event",
-    "name": "BridgeToSpot",
+    "name": "BridgeToEvm",
     "inputs": [
       {
         "name": "sender",
@@ -976,6 +947,12 @@ export const leveragedTokenAbi = [
     "name": "RemoveAgent",
     "inputs": [
       {
+        "name": "slot",
+        "type": "uint8",
+        "indexed": true,
+        "internalType": "uint8",
+      },
+      {
         "name": "agent",
         "type": "address",
         "indexed": true,
@@ -993,31 +970,6 @@ export const leveragedTokenAbi = [
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256",
-      },
-    ],
-    "anonymous": false,
-  },
-  {
-    "type": "event",
-    "name": "SetAgent",
-    "inputs": [
-      {
-        "name": "slot",
-        "type": "uint8",
-        "indexed": true,
-        "internalType": "uint8",
-      },
-      {
-        "name": "agent",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address",
-      },
-      {
-        "name": "name",
-        "type": "string",
-        "indexed": false,
-        "internalType": "string",
       },
     ],
     "anonymous": false,
@@ -1061,31 +1013,6 @@ export const leveragedTokenAbi = [
     "anonymous": false,
   },
   {
-    "type": "event",
-    "name": "UsdClassTransfer",
-    "inputs": [
-      {
-        "name": "sender",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address",
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256",
-      },
-      {
-        "name": "toPerp",
-        "type": "bool",
-        "indexed": false,
-        "internalType": "bool",
-      },
-    ],
-    "anonymous": false,
-  },
-  {
     "type": "error",
     "name": "AlreadyCreated",
     "inputs": [],
@@ -1103,11 +1030,6 @@ export const leveragedTokenAbi = [
   {
     "type": "error",
     "name": "CancelDelayNotElapsed",
-    "inputs": [],
-  },
-  {
-    "type": "error",
-    "name": "CoreWriterLib__CannotSelfTransfer",
     "inputs": [],
   },
   {
@@ -1251,11 +1173,6 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "error",
-    "name": "InvalidAgentSlot",
-    "inputs": [],
-  },
-  {
-    "type": "error",
     "name": "InvalidAmount",
     "inputs": [],
   },
@@ -1266,12 +1183,22 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "error",
+    "name": "InvalidMarketId",
+    "inputs": [],
+  },
+  {
+    "type": "error",
     "name": "LeveragedTokenNotActivated",
     "inputs": [],
   },
   {
     "type": "error",
     "name": "MintPaused",
+    "inputs": [],
+  },
+  {
+    "type": "error",
+    "name": "NoAvailableSlot",
     "inputs": [],
   },
   {
