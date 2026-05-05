@@ -65,6 +65,54 @@ export const hyperliquidHandlerAbi = [
         "type": "address",
         "internalType": "address",
       },
+      {
+        "name": "perpDexIndex_",
+        "type": "uint32",
+        "internalType": "uint32",
+      },
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
+    "type": "function",
+    "name": "notionalUsdc",
+    "inputs": [
+      {
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
+      },
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
+      },
+    ],
+    "stateMutability": "view",
+  },
+  {
+    "type": "function",
+    "name": "perpUsdc",
+    "inputs": [
+      {
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
+      },
+      {
+        "name": "perpDexIndex_",
+        "type": "uint32",
+        "internalType": "uint32",
+      },
     ],
     "outputs": [
       {

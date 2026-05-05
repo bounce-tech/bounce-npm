@@ -97,11 +97,6 @@ export const leveragedTokenHelperAbi = [
             "internalType": "uint256",
           },
           {
-            "name": "usdcMargin",
-            "type": "uint256",
-            "internalType": "uint256",
-          },
-          {
             "name": "notionalValue",
             "type": "uint256",
             "internalType": "uint256",
@@ -154,11 +149,6 @@ export const leveragedTokenHelperAbi = [
           },
           {
             "name": "usdcPerpBalance",
-            "type": "uint256",
-            "internalType": "uint256",
-          },
-          {
-            "name": "usdcMargin",
             "type": "uint256",
             "internalType": "uint256",
           },
@@ -229,6 +219,11 @@ export const leveragedTokenHelperAbi = [
           },
           {
             "name": "totalAssets",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "hyperliquidNotional",
             "type": "uint256",
             "internalType": "uint256",
           },
@@ -342,6 +337,11 @@ export const leveragedTokenHelperAbi = [
           },
           {
             "name": "totalAssets",
+            "type": "uint256",
+            "internalType": "uint256",
+          },
+          {
+            "name": "hyperliquidNotional",
             "type": "uint256",
             "internalType": "uint256",
           },
@@ -532,11 +532,6 @@ export const leveragedTokenHelperAbi = [
               },
               {
                 "name": "usdcPerpBalance",
-                "type": "uint256",
-                "internalType": "uint256",
-              },
-              {
-                "name": "usdcMargin",
                 "type": "uint256",
                 "internalType": "uint256",
               },
