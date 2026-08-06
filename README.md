@@ -25,6 +25,7 @@ import {
   LEVERAGED_TOKEN_HELPER_ADDRESS,
   LEVERAGED_TOKEN_IMPLEMENTATION_ADDRESS,
   REFERRALS_ADDRESS,
+  REFERRALS_V2_ADDRESS,
   USDC_ADDRESS,
   HYPE_BALANCE_HELPER_ADDRESS,
 } from "@bouncetech/contracts";
@@ -37,6 +38,8 @@ const usdcAddress = USDC_ADDRESS;
 const hypeBalanceHelperAddress = HYPE_BALANCE_HELPER_ADDRESS;
 ```
 
+`REFERRALS_V2_ADDRESS` should be used in all integrations since it's the proxy address.
+
 ### Import Contract ABIs
 
 ```typescript
@@ -48,6 +51,7 @@ import {
   HYPERLIQUID_HANDLER_ABI,
   LEVERAGED_TOKEN_HELPER_ABI,
   REFERRALS_ABI,
+  REFERRALS_V2_ABI,
   USDC_ABI,
   HYPE_BALANCE_HELPER_ABI,
 } from "@bouncetech/contracts";
@@ -80,6 +84,7 @@ The following contracts are available through this package:
 - **LeveragedTokenHelper**
 - **LeveragedTokenImplementation**
 - **Referrals**
+- **Referrals V2**
 - **USDC**
 - **HypeBalanceHelper**
 
@@ -96,6 +101,7 @@ The following ABIs are available:
 - `LEVERAGED_TOKEN_ABI` - Leveraged Token contract ABI
 - `LEVERAGED_TOKEN_HELPER_ABI` - LeveragedTokenHelper contract ABI
 - `REFERRALS_ABI` - Referrals contract ABI
+- `REFERRALS_V2_ABI` - Referrals V2 contract ABI
 - `USDC_ABI` - USDC (ERC20) contract ABI
 - `HYPE_BALANCE_HELPER_ABI` - HypeBalanceHelper contract ABI
 
