@@ -98,7 +98,7 @@ The following ABIs are available:
 - `GLOBAL_STORAGE_ABI` - GlobalStorage contract ABI
 - `GLOBAL_STORAGE_HELPER_ABI` - GlobalStorageHelper contract ABI
 - `HYPERLIQUID_HANDLER_ABI` - HyperliquidHandler contract ABI
-- `LEVERAGED_TOKEN_ABI` - Leveraged Token contract ABI
+- `LEVERAGED_TOKEN_ABI` - Leveraged Token contract ABI (`mint` is overloaded: 3-arg and 4-arg with referral code; viem/wagmi resolve by argument count, ethers v6 needs the full signature)
 - `LEVERAGED_TOKEN_HELPER_ABI` - LeveragedTokenHelper contract ABI
 - `REFERRALS_ABI` - Referrals contract ABI
 - `REFERRALS_V2_ABI` - Referrals V2 contract ABI

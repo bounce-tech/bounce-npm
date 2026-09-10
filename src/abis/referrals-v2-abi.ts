@@ -328,6 +328,24 @@ export const referralsV2Abi = [
   },
   {
     "type": "function",
+    "name": "joinWithReferralFor",
+    "inputs": [
+      {
+        "name": "user_",
+        "type": "address",
+        "internalType": "address",
+      },
+      {
+        "name": "referralCode_",
+        "type": "string",
+        "internalType": "string",
+      },
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable",
+  },
+  {
+    "type": "function",
     "name": "maxCodeLength",
     "inputs": [],
     "outputs": [
