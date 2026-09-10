@@ -454,6 +454,40 @@ export const leveragedTokenAbi = [
   },
   {
     "type": "function",
+    "name": "mint",
+    "inputs": [
+      {
+        "name": "to_",
+        "type": "address",
+        "internalType": "address",
+      },
+      {
+        "name": "baseAmount_",
+        "type": "uint256",
+        "internalType": "uint256",
+      },
+      {
+        "name": "minOut_",
+        "type": "uint256",
+        "internalType": "uint256",
+      },
+      {
+        "name": "referralCode_",
+        "type": "string",
+        "internalType": "string",
+      },
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256",
+      },
+    ],
+    "stateMutability": "nonpayable",
+  },
+  {
+    "type": "function",
     "name": "mintPaused",
     "inputs": [],
     "outputs": [
